@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AM.ApplicationCore",
+    "\\AM.ApplicationCore\\bin\\Debug",
+    "\\AM.ApplicationCore\\bin\\Debug\\net6.0",
+    "\\AM.ApplicationCore\\obj\\Debug",
+    "\\AM.ApplicationCore\\obj\\Debug\\net6.0",
+    "\\AM.ApplicationCore\\obj\\Debug\\net6.0\\ref"
+  ],
+  "SelectedNode": "\\AM.ApplicationCore\\Domain",
+  "PreviewInSolutionExplorer": false
+}
