@@ -3,14 +3,17 @@ using AM.ApplicationCore.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Plane = AM.ApplicationCore.Domain.Plane;
 
 namespace AM.ApplicationCore.Services
 {
     public class ServiceFlight : IServiceFlight
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
+       
 
         // 6 + 7 
         public List<DateTime> GetFlightDates(string destination)
@@ -108,6 +111,19 @@ namespace AM.ApplicationCore.Services
         }
 
 
+        public void FlightDetailsDel(Plane p,Func<Plane> detail)
+        {
+
+            var query = Flights
+                .Where(f => f.plane.planeId == p.planeId)
+                .Select(f => new { f.flightDate, f.destination });
+            foreach (var item in query) { Console.WriteLine(item); }
+
+        }
+        public int DurationAverageDel(Func<String, int> duree)
+        {
+            
+        }
 
 
 

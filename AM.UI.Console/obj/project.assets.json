@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "D:\\.NET\\TP1\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectPath": "D:\\.NET\\TP1\\AM.UI.Console\\AM.UI.Console.csproj",
       "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.UI.Console\\obj\\",
+      "outputPath": "D:\\.NET\\TP1\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             }
           }
         }

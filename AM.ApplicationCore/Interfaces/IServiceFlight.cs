@@ -11,6 +11,8 @@ namespace AM.ApplicationCore.Interfaces
     {
         List<DateTime> GetFlightDates(string destination);
         //List<Flight> GetFlights(string filterType, string filterValue);
+
     }
+     
 
 }

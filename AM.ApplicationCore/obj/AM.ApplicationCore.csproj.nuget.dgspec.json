@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {}
+    "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {}
   },
   "projects": {
-    "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+    "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+        "projectUniqueName": "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
         "projectName": "AM.ApplicationCore",
-        "projectPath": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+        "projectPath": "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET\\.NET-Achref-Zitoun-main\\ZitounAchref\\AM.ApplicationCore\\obj\\",
+        "outputPath": "D:\\.NET\\TP1\\AM.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
