@@ -10,6 +10,7 @@ namespace AM.ApplicationCore.Domain
     {
         public DateTime birthDate { get; set; }
         public string firstName { get; set; }
+        public int PassengerId { get; set; }
         public string lastName { get; set; }
         public string emailAdress { get; set; }
         public string telNumber { get; set; }
