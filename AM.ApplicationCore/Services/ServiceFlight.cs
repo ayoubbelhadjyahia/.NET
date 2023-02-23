@@ -13,12 +13,32 @@ namespace AM.ApplicationCore.Services
     public class ServiceFlight : IServiceFlight
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
-       
+        //16
+        public Action<Plane> FlightDetailsDel{ get; set; }
+        public Func<string, double> DurationAverageDel { get; set; }
 
+
+
+
+
+
+
+        //17+18
+        public ServiceFlight()
+        {
+            FlightDetailsDel = (Plane plane)=>
+        {
+                var query = Flights
+                    .Where(f => f.plane.planeId == plane.planeId)
+                    .Select(f => new { f.flightDate, f.destination });
+                foreach (var item in query) { Console.WriteLine(item); }
+            };
+            DurationAverageDel = DurationAverage;
+        }
         // 6 + 7 
         public List<DateTime> GetFlightDates(string destination)
         {
-            List<DateTime> dates = new List<DateTime>();
+           // List<DateTime> dates = new List<DateTime>();
             ////methode 3adeya 1
             ////for (int i = 0; i < Flights.Count; i++)
             ////{
@@ -109,25 +129,7 @@ namespace AM.ApplicationCore.Services
             }
              
         }
-
-
-        public void FlightDetailsDel(Plane p,Func<Plane> detail)
-        {
-
-            var query = Flights
-                .Where(f => f.plane.planeId == p.planeId)
-                .Select(f => new { f.flightDate, f.destination });
-            foreach (var item in query) { Console.WriteLine(item); }
-
-        }
-        public int DurationAverageDel(Func<String, int> duree)
-        {
-            
-        }
-
-
-
-        public List<Flight> GetFlights(string filterValue, Func<Flight, String, Boolean> condition)
+        public List<Flight> GetFlights(string filterValue, Func<Flight, string, Boolean> condition)
         {
             List<Flight> f = new List<Flight>() ;
             foreach (var flight in Flights)

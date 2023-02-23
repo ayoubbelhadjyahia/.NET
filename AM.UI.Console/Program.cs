@@ -29,7 +29,9 @@ Plane plane = new Plane();
 // 10 - Création des méthode checkprofile();
 
 // 11 -
-//Passenger p = new Passenger();
+Passenger p = new Passenger();
+p.firstName= "test";
+p.lastName= "test";
 //p.PassengerType();
 
 //Staff s = new Staff();
@@ -55,6 +57,22 @@ serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
 {
     return f.flightDate.Equals(c);
 });
+
+//20
+p.UpperFullName();
+
+Console.WriteLine(p);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

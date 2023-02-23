@@ -31,7 +31,7 @@ namespace AM.ApplicationCore.Domain
             new Staff()
             {
                 firstName = "captain",
-                lastName = "captain",
+                lastName = "captain",²
                 emailAdress="Captain.captain@gmail.com",
                 birthDate=new DateTime(1965, 01, 01),
                 employementDate=new DateTime(1999, 01, 01),
