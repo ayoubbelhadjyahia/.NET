@@ -1,4 +1,5 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,13 @@ namespace AM.Infrastructure
         {
             optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MsSqlLocaldb;initial catalog=AyoubBelhadjyahia;Integrated Security = true");
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());   
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<String>().HaveMaxLength(120);
+        }
     }
 }
