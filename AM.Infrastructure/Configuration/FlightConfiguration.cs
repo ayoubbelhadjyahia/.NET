@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AM.Infrastructure.Configuration
 {
-    internal class FlightConfiguration : IEntityTypeConfiguration<Flight>
+    public class FlightConfiguration : IEntityTypeConfiguration<Flight>
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Flight> builder)
         {
@@ -18,7 +18,7 @@ namespace AM.Infrastructure.Configuration
             builder.ToTable("MyFlight");
             builder.Property(f => f.departure).IsRequired().HasMaxLength(100).HasDefaultValue("TOUNES").HasColumnType("nchar");
             builder.HasOne(a=>a.plane).WithMany(b=>b.flights).HasForeignKey(f => f.PlaneFk).OnDelete(DeleteBehavior.SetNull);
-            builder.HasMany(b => b.passengers).WithMany(a => a.flights).UsingEntity(a => a.ToTable("MyReservation"));
+     //       builder.HasMany(b => b.passengers).WithMany(a => a.flights).UsingEntity(a => a.ToTable("MyReservation"));
         }
     }
 }

@@ -105,14 +105,14 @@ namespace AM.ApplicationCore.Services
         }
 
         //14
-        List<Passenger> SeniorTravellers(Flight flight)
-        {
-            var query = flight.passengers.OfType<Traveller>()
-                //.Where(p => p is Traveller)
-                .OrderBy(p => p.birthDate).Take(3);
-            List<Passenger> pa =new List<Passenger>(query);
-        return pa;
-                }
+        //List<Passenger> SeniorTravellers(Flight flight)
+        //{
+        //    var query = flight.passengers.OfType<Traveller>()
+        //        //.Where(p => p is Traveller)
+        //        .OrderBy(p => p.birthDate).Take(3);
+        //    List<Passenger> pa =new List<Passenger>(query);
+        //return pa;
+        //        }
 
         //15
        void DestinationGroupedFlights()
