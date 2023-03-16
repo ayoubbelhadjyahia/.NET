@@ -21,9 +21,10 @@ namespace AM.ApplicationCore.Domain
         public string telNumber { get; set; }
         [Key,MaxLength(7)]
         public string passportNumber { get; set; }
-        public List<Ticket> tickets { get; set; }
+        public virtual List<Ticket> tickets { get; set; }
 
         public FullName FullName { get; set; }
+        public virtual List<Reservation> Reservations{ get; set; }
 
         public override string ToString()
         {

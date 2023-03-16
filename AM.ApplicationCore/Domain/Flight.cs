@@ -16,9 +16,9 @@ namespace AM.ApplicationCore.Domain
         public int flightId { get; set; }
         public DateTime effectiveArrival { get; set; } 
         public int estimatedDuration { get; set; } 
-        public List<Ticket>  tickets{ get; set; }
+        public virtual List<Ticket>  tickets{ get; set; }
         
-        public Plane ? plane { get; set; }// ? n7ebouh iwali null 
+        public virtual Plane ? plane { get; set; }// ? n7ebouh iwali null 
         [ForeignKey(nameof(plane))]
         public int ? PlaneFk { get; set; }
 

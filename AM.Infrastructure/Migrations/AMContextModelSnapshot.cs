@@ -18,6 +18,9 @@ namespace AM.Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.3")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -113,6 +116,79 @@ namespace AM.Infrastructure.Migrations
                     b.ToTable("Planes");
                 });
 
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Reservation", b =>
+                {
+                    b.Property<int>("SeatFK")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PassengerFK")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime>("DateReservation")
+                        .HasColumnType("Date");
+
+                    b.HasKey("SeatFK", "PassengerFK", "DateReservation");
+
+                    b.HasIndex("PassengerFK");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Seat", b =>
+                {
+                    b.Property<int>("SeatId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SeatId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<int>("PlaneFK")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SeatNumber")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<int?>("SectionFK")
+                        .HasColumnType("int");
+
+                    b.Property<int>("size")
+                        .HasColumnType("int");
+
+                    b.HasKey("SeatId");
+
+                    b.HasIndex("PlaneFK");
+
+                    b.HasIndex("SectionFK");
+
+                    b.ToTable("Seats");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Section", b =>
+                {
+                    b.Property<int>("IdSection")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSection"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.HasKey("IdSection");
+
+                    b.ToTable("Sections");
+                });
+
             modelBuilder.Entity("AM.ApplicationCore.Domain.Ticket", b =>
                 {
                     b.Property<string>("passanFK")
@@ -121,10 +197,6 @@ namespace AM.Infrastructure.Migrations
 
                     b.Property<int>("flightFK")
                         .HasColumnType("int");
-
-                    b.Property<string>("PassengerpassportNumber")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<double>("Prix")
                         .HasPrecision(2, 3)
@@ -138,14 +210,9 @@ namespace AM.Infrastructure.Migrations
                     b.Property<bool>("VIP")
                         .HasColumnType("bit");
 
-                    b.Property<int>("flightId")
-                        .HasColumnType("int");
-
                     b.HasKey("passanFK", "flightFK");
 
-                    b.HasIndex("PassengerpassportNumber");
-
-                    b.HasIndex("flightId");
+                    b.HasIndex("flightFK");
 
                     b.ToTable("Ticket");
                 });
@@ -226,15 +293,54 @@ namespace AM.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AM.ApplicationCore.Domain.Ticket", b =>
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Reservation", b =>
                 {
                     b.HasOne("AM.ApplicationCore.Domain.Passenger", "Passenger")
-                        .WithMany("tickets")
-                        .HasForeignKey("PassengerpassportNumber");
+                        .WithMany("Reservations")
+                        .HasForeignKey("PassengerFK")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
+                    b.HasOne("AM.ApplicationCore.Domain.Seat", "Seat")
+                        .WithMany("Reservations")
+                        .HasForeignKey("SeatFK")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Passenger");
+
+                    b.Navigation("Seat");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Seat", b =>
+                {
+                    b.HasOne("AM.ApplicationCore.Domain.Plane", "Plane")
+                        .WithMany("seats")
+                        .HasForeignKey("PlaneFK")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AM.ApplicationCore.Domain.Section", "Section")
+                        .WithMany("Seats")
+                        .HasForeignKey("SectionFK")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Plane");
+
+                    b.Navigation("Section");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Ticket", b =>
+                {
                     b.HasOne("AM.ApplicationCore.Domain.Flight", "Flight")
                         .WithMany("tickets")
-                        .HasForeignKey("flightId")
+                        .HasForeignKey("flightFK")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AM.ApplicationCore.Domain.Passenger", "Passenger")
+                        .WithMany("tickets")
+                        .HasForeignKey("passanFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -268,12 +374,26 @@ namespace AM.Infrastructure.Migrations
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Passenger", b =>
                 {
+                    b.Navigation("Reservations");
+
                     b.Navigation("tickets");
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Plane", b =>
                 {
                     b.Navigation("flights");
+
+                    b.Navigation("seats");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Seat", b =>
+                {
+                    b.Navigation("Reservations");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Section", b =>
+                {
+                    b.Navigation("Seats");
                 });
 #pragma warning restore 612, 618
         }

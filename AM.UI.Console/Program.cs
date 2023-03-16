@@ -1,6 +1,7 @@
 ﻿using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -61,7 +62,13 @@ serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
 
 Console.WriteLine(p);
 
-
+AMContext aMContext= new AMContext();
+//aMContext.Flights.Add(new Flight() { destination = "tunis", departure = "Djerba", effectiveArrival = new DateTime(2022, 2, 1), estimatedDuration = 30, flightDate = new DateTime(2022, 2, 5), plane = new Plane() { capacity = 91, manufactureDate = new DateTime(2022, 2, 9), planeType = PlaneType.Boing } });
+//aMContext.SaveChanges();
+foreach (var item in aMContext.Flights.ToList())
+{
+    Console.WriteLine(item.flightId+"/"+"/"+item.departure+"/"+item.plane.capacity+"/"+item.plane.manufactureDate);
+}
 
 
 
