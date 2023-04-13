@@ -3640,19 +3640,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {}
+    "C:\\Users\\belha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET\\TP1\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "D:\\.NET\\TP1\\AM.UI.Console\\AM.UI.Console.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET\\TP1\\AM.UI.Console\\obj\\",
+      "projectPath": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UI.Console\\AM.UI.Console.csproj",
+      "packagesPath": "C:\\Users\\belha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\belha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3666,11 +3666,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "D:\\.NET\\TP1\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             },
-            "D:\\.NET\\TP1\\AM.Infrastructure\\AM.Infrastructure.csproj": {
-              "projectPath": "D:\\.NET\\TP1\\AM.Infrastructure\\AM.Infrastructure.csproj"
+            "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.Infrastructure\\AM.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.Infrastructure\\AM.Infrastructure.csproj"
             }
           }
         }
@@ -3708,7 +3708,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

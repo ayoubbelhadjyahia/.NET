@@ -10,7 +10,7 @@ using Plane = AM.ApplicationCore.Domain.Plane;
 
 namespace AM.ApplicationCore.Services
 {
-    public class ServiceFlight : IServiceFlight
+    public class ServiceFlight : Service<Flight>,IServiceFlight
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
         //16
@@ -24,7 +24,7 @@ namespace AM.ApplicationCore.Services
 
 
         //17+18
-        public ServiceFlight()
+        public ServiceFlight(IUnitOfWork uow):base (uow)
         {
             FlightDetailsDel = (Plane plane)=>
         {

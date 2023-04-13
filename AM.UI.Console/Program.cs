@@ -45,18 +45,18 @@ Passenger p = new Passenger();
 //TP2 
 // 5
 
-ServiceFlight serviceFlight = new ServiceFlight();
-serviceFlight.Flights = TestData.flights;
+//ServiceFlight serviceFlight = new ServiceFlight();
+//serviceFlight.Flights = TestData.flights;
 
-serviceFlight.GetFlights("Paris",delegate(Flight f, String c)
-{
-    return f.destination == c;
-});
+//serviceFlight.GetFlights("Paris",delegate(Flight f, String c)
+//{
+//    return f.destination == c;
+//});
 
-serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
-{
-    return f.flightDate.Equals(c);
-});
+//serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
+//{
+//    return f.flightDate.Equals(c);
+//});
 
 //p.UpperFullName();
 
