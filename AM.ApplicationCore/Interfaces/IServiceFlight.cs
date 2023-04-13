@@ -9,8 +9,8 @@ namespace AM.ApplicationCore.Interfaces
 {
     public interface IServiceFlight: IService<Flight>
     {
+        
         List<DateTime> GetFlightDates(string destination);
         //List<Flight> GetFlights(string filterType, string filterValue);
-
     }
 }

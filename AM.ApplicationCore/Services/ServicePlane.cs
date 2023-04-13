@@ -27,6 +27,9 @@ namespace AM.ApplicationCore.Services
         }
         public bool IsAvailablePlane(int n,Flight flight)
         {
+          //  int capacity = Get(p => p.flights.Where(f => f.flightId == flight.flightId).Count() > 0).capacity;
+           // var plane= GetAll().Where(p=>p.flights.Contains(flight)==true).First(); 
+           // var flightt=plane.flights.Single(j=>j.flightId==flight.flightId);
             int capacity = Get(p=>p.flights.Contains(flight) == true).capacity;
             int nbPassengers = flight.tickets.Count();
             //return ;
@@ -34,11 +37,18 @@ namespace AM.ApplicationCore.Services
         }
         public void DeletePlanes()
         {
-            foreach (var plane in GetAll().Where(p => (DateTime.Now - p.manufactureDate).TotalDays > 365 * 10).ToList())
-            {
-                Delete(plane);
-                Commit();
-            }
+            ///////////pour un objet 
+            //foreach (var p in  GetAll().Where(p => (DateTime.Now - p.manufactureDate).TotalDays > 365 * 10).ToList())
+            // {
+            //     Delete(p);
+            // }
+            // Commit();
+
+
+            ////////pour une list
+            Delete(p => (DateTime.Now - p.manufactureDate).TotalDays > 365 * 10);
+            Commit();  
+
         }
     }
 }

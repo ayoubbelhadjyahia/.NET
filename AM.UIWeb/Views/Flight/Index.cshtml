@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AM.ApplicationCore.Domain.Flight>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flightDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.effectiveArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimatedDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneFk)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.flightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.flightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.effectiveArrival)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimatedDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaneFk)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.flightId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.flightId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.flightId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
