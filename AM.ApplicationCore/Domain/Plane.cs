@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +12,13 @@ namespace AM.ApplicationCore.Domain
     {
         [Range(0,int .MaxValue)]
         public int capacity { get; set; }
-        
         public int planeId { get; set; }
         public PlaneType planeType { get; set;}
         public DateTime manufactureDate { get; set; }
         public virtual ICollection<Flight> flights { get; set; }
-
-
-        //tp -revision 
+        [NotMapped]
+        public String Information { get { return "capacity: " + capacity + " date: " + manufactureDate; } }
+            //tp -revision 
         public virtual List<Seat> seats { get; set; }
         public override string ToString()
         {

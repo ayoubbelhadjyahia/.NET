@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PlaneFk" class="control-label"></label>
-                <input asp-for="PlaneFk" class="form-control" />
+                <select asp-for="PlaneFk" class="form-control" asp-items="ViewBag.planes"></select>
                 <span asp-validation-for="PlaneFk" class="text-danger"></span>
             </div>
             <div class="form-group">
