@@ -19,7 +19,7 @@ namespace AM.UIWeb.Controllers
         {
             
             var plane=servicePlane.GetAll();
-            return View(plane);
+            return View(plane.ToList());
         }
 
         // GET: PlaneController/Details/5

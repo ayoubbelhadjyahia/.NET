@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\img\\bruce-mars.jpg",
+      "PackagePath": "staticwebassets\\img\\bruce-mars.jpg"
+    },
+    {
+      "Id": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\img\\kendji-girac.jpeg",
+      "PackagePath": "staticwebassets\\img\\kendji-girac.jpeg"
+    },
+    {
       "Id": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

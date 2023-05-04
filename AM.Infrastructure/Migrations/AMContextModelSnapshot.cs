@@ -57,6 +57,11 @@ namespace AM.Infrastructure.Migrations
                     b.Property<DateTime>("flightDate")
                         .HasColumnType("Date");
 
+                    b.Property<string>("pilote")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.HasKey("flightId");
 
                     b.HasIndex("PlaneFk");

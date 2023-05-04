@@ -15,7 +15,7 @@ namespace AM.UIWeb.Controllers
 
         public IActionResult Index()
         {
-            return View("index1");
+            return View("index");
         }
 
         public IActionResult Privacy()

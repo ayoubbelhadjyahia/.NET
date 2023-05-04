@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6QvT4vrTOEa+n7RrXWKWIMOoTpQMdSAWyAr4TVpPV4A=",
+  "Hash": "JKjR1asgs3DSsqyYZ8WlFBgKzVbZRI/7j6i1EtyzIrY=",
   "Source": "AM.UIWeb",
   "BasePath": "_content/AM.UIWeb",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\img\\bruce-mars.jpg",
+      "SourceId": "AM.UIWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\",
+      "BasePath": "_content/AM.UIWeb",
+      "RelativePath": "img/bruce-mars.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bruce-mars.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\img\\kendji-girac.jpeg",
+      "SourceId": "AM.UIWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\",
+      "BasePath": "_content/AM.UIWeb",
+      "RelativePath": "img/kendji-girac.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\kendji-girac.jpeg"
     },
     {
       "Identity": "C:\\Users\\belha\\Desktop\\.Net\\.NET\\AM.UIWeb\\wwwroot\\js\\site.js",
