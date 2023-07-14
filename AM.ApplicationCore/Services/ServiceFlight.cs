@@ -17,12 +17,6 @@ namespace AM.ApplicationCore.Services
         public Action<Plane> FlightDetailsDel{ get; set; }
         public Func<string, double> DurationAverageDel { get; set; }
 
-
-
-
-
-
-
         //17+18
         public ServiceFlight(IUnitOfWork uow):base (uow)
         {
